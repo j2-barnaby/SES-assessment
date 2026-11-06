@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>File Decryption</title>
+  </head>
+  <body>
+    <div>
+      <h1>Decrypt a File</h1>
+      <form method="post" action="/decrypt">
+        <label for="filename">Select a file:</label>
+        <select name="filename" id="filename" required>
+          {% for file in files %}
+            <option value="{{ file }}">{{ file }}</option>
+          {% endfor %}
+        </select>
+        <br><br>
+        <label for="key">Enter decryption key:</label>
+        <input type="text" name="key" id="key" placeholder="Enter encryption key" required>
+        <br><br>
+        <button type="submit">Decrypt and Download</button>
+      </form>
+    </div>
+  </body>
+</html>
